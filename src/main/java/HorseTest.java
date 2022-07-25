@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 
 class HorseTest {
-
+//
 //    Проверить, что при передаче в конструктор первым параметром null,
 //      будет выброшено IllegalArgumentException. Для этого нужно воспользоваться методом assertThrows;
 
