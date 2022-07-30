@@ -73,14 +73,18 @@ public class HorseTest {
     @Test
     public void getName() {
         String testName = "John";
+
         Horse horse = new Horse(testName, 10);
+
         assertEquals(testName, horse.getName());
     }
 
     @Test
     public void getSpeed() {
         double testSpeed = 22;
+
         Horse horse = new Horse("John", testSpeed);
+
         assertEquals(testSpeed, horse.getSpeed());
     }
 
@@ -90,8 +94,10 @@ public class HorseTest {
     @Test
     public void getDistance() {
         double testDistance = 25;
+
         Horse horse1 = new Horse("John", 10, testDistance);
         Horse horse2 = new Horse("John", 17);
+
         assertEquals(testDistance, horse1.getDistance());
         assertEquals(0, horse2.getDistance());
     }

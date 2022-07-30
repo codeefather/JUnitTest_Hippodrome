@@ -33,6 +33,7 @@ public class HippodromeTest {
                 IllegalArgumentException.class,
                 () -> new Hippodrome(horses)
         );
+
         assertEquals("Horses cannot be null.", exception.getMessage());
     }
 
@@ -54,7 +55,9 @@ public class HippodromeTest {
         for (int i = 1; i <= 30; i++) {
             horses.add(new Horse("Horse"+i, i+1, i+2));
         }
+
         Hippodrome hippodrome = new Hippodrome(horses);
+
         assertEquals(horses, hippodrome.getHorses());
     }
 
@@ -74,5 +77,20 @@ public class HippodromeTest {
         for (Horse horse: horses) {
             verify(horse).move();
         }
+    }
+
+//    метод getWinner
+//    Проверить, что метод возвращает лошадь с самым большим значением distance.
+
+    @Test
+    void returnMaxDistanceHorse(){
+        horses = new ArrayList<>();
+        for (int i = 1; i <= 10; i++) {
+            horses.add(new Horse("Horse"+i, i+1, i+2));
+        }
+
+        Hippodrome hippodrome = new Hippodrome(horses);
+
+        assertEquals(12, hippodrome.getWinner().getDistance());
     }
 }
