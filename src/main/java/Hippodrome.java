@@ -2,10 +2,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+
 import static java.util.Objects.isNull;
 
 public class Hippodrome {
-
+//    private final static Logger log = LogManager.getLogger(Hippodrome.class);
     private final List<Horse> horses;
 
     public Hippodrome(List<Horse> horses) {

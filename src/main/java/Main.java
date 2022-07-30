@@ -1,9 +1,16 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+
 public class Main {
 
+    private final static Logger log = LogManager.getLogger(Main.class);
+
     public static void main(String[] args) throws Exception {
+        log.error("Application started");
         List<Horse> horses = List.of(
                 new Horse("Буцефал", 2.4),
                 new Horse("Туз Пик", 2.5),
@@ -23,6 +30,7 @@ public class Main {
 
         String winnerName = hippodrome.getWinner().getName();
         System.out.println("Победил " + winnerName + "!");
+        log.error("Application finished");
     }
 
     private static void watch(Hippodrome hippodrome) throws Exception {
@@ -31,4 +39,5 @@ public class Main {
                 .forEach(System.out::println);
         System.out.println("\n".repeat(10));
     }
+
 }
