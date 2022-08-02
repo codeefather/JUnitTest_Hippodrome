@@ -10,17 +10,19 @@ public class Main {
     private final static Logger log = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) throws Exception {
-        log.error("Application started");
+
         List<Horse> horses = List.of(
-                new Horse("Буцефал", 2.4),
-                new Horse("Туз Пик", 2.5),
-                new Horse("Зефир", 2.6),
-                new Horse("Пожар", 2.7),
-                new Horse("Лобстер", 2.8),
-                new Horse("Пегас", 2.9),
-                new Horse("Вишня", 3)
+                new Horse("Bucefal", 2.4),
+                new Horse("Tuz Peack", 2.5),
+                new Horse("Zephire", 2.6),
+                new Horse("Pozhar", 2.7),
+                new Horse("Lobster", 2.8),
+                new Horse("Pegasus", 2.9),
+                new Horse("Vishnya", 3)
         );
         Hippodrome hippodrome = new Hippodrome(horses);
+
+        log.info("Начало скачек. Количество участников: {}", horses.size());
 
         for (int i = 0; i < 100; i++) {
             hippodrome.move();
@@ -29,8 +31,8 @@ public class Main {
         }
 
         String winnerName = hippodrome.getWinner().getName();
-        System.out.println("Победил " + winnerName + "!");
-        log.error("Application finished");
+        System.out.println("Winner " + winnerName + "!");
+        log.info("Окончание скачек. Победитель: {}", winnerName);
     }
 
     private static void watch(Hippodrome hippodrome) throws Exception {

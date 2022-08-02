@@ -113,7 +113,9 @@ public class HorseTest {
     public void verifyTestMove() {
         try(MockedStatic<Horse> mockedStatic = Mockito.mockStatic(Horse.class)){
             Horse horse = new Horse("Марриот", 10, 10);
+
             horse.move();
+
             mockedStatic.verify(() -> Horse.getRandomDouble(0.2, 0.9));
         }
     }
